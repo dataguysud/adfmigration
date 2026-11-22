@@ -1,0 +1,16 @@
+{
+	"name": "adfdemowithdevi",
+	"properties": {
+		"trustModeClaimForMi": {
+			"value": "Disabled",
+			"editable": true,
+			"isExplicitlySet": false
+		}
+	},
+	"location": "eastus",
+	"identity": {
+		"type": "SystemAssigned",
+		"principalId": "5f8cb08e-139f-45df-9c3b-c33ea25bb0bf",
+		"tenantId": "c7e0f842-2b1b-40fe-ba7f-e9f200034580"
+	}
+}

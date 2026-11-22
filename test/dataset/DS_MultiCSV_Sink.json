@@ -1,0 +1,20 @@
+{
+	"name": "DS_MultiCSV_Sink",
+	"properties": {
+		"linkedServiceName": {
+			"referenceName": "LS_MultiParque",
+			"type": "LinkedServiceReference"
+		},
+		"annotations": [],
+		"type": "Parquet",
+		"typeProperties": {
+			"location": {
+				"type": "AzureBlobFSLocation",
+				"fileSystem": "multicsv"
+			},
+			"compressionCodec": "snappy"
+		},
+		"schema": []
+	},
+	"type": "Microsoft.DataFactory/factories/datasets"
+}
