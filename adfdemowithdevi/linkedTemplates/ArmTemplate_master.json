@@ -1,0 +1,140 @@
+{
+	"$schema": "http://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"type": "string",
+			"metadata": "Data Factory name",
+			"defaultValue": "adfdemowithdevi"
+		},
+		"ADLS_SQL_ADLSSINK_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'ADLS_SQL_ADLSSINK'"
+		},
+		"DL_MultiCSV_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'DL_MultiCSV'"
+		},
+		"LS_MultiParque_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_MultiParque'"
+		},
+		"LS_SINK_PARQUE_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SINK_PARQUE'"
+		},
+		"LS_SQLSERVER_password": {
+			"type": "secureString",
+			"metadata": "Secure string for 'password' of 'LS_SQLSERVER'"
+		},
+		"LS_SourceExcel_accountKey": {
+			"type": "secureString",
+			"metadata": "Secure string for 'accountKey' of 'LS_SourceExcel'"
+		},
+		"ADLS_SQL_ADLSSINK_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"DL_MultiCSV_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsource2.dfs.core.windows.net/"
+		},
+		"LS_MultiParque_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"LS_SINK_PARQUE_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"type": "string",
+			"defaultValue": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"type": "string",
+			"defaultValue": "AdventureWorks2022"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"type": "string",
+			"defaultValue": "visionboard_user"
+		},
+		"LS_SourceExcel_properties_typeProperties_url": {
+			"type": "string",
+			"defaultValue": "https://adlsdevsource2.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"type": "string",
+			"metadata": "URI to storage account containing linked ARM templates"
+		},
+		"containerSasToken": {
+			"type": "string",
+			"metadata": "Sas token to storage account containing linked ARM templates"
+		}
+	},
+	"variables": {
+		"factoryId": "[concat('Microsoft.DataFactory/factories/', parameters('factoryName'))]"
+	},
+	"resources": [
+		{
+			"name": "adfdemowithdevi_ArmTemplate_0",
+			"type": "Microsoft.Resources/deployments",
+			"apiVersion": "2024-03-01",
+			"properties": {
+				"mode": "incremental",
+				"templateLink": {
+					"uri": "[concat(parameters('containerUri'), '/ArmTemplate_0.json', parameters('containerSasToken'))]",
+					"contentVersion": "1.0.0.0"
+				},
+				"parameters": {
+					"factoryName": {
+						"value": "[parameters('factoryName')]"
+					},
+					"ADLS_SQL_ADLSSINK_accountKey": {
+						"value": "[parameters('ADLS_SQL_ADLSSINK_accountKey')]"
+					},
+					"DL_MultiCSV_accountKey": {
+						"value": "[parameters('DL_MultiCSV_accountKey')]"
+					},
+					"LS_MultiParque_accountKey": {
+						"value": "[parameters('LS_MultiParque_accountKey')]"
+					},
+					"LS_SINK_PARQUE_accountKey": {
+						"value": "[parameters('LS_SINK_PARQUE_accountKey')]"
+					},
+					"LS_SourceExcel_accountKey": {
+						"value": "[parameters('LS_SourceExcel_accountKey')]"
+					},
+					"LS_SQLSERVER_password": {
+						"value": "[parameters('LS_SQLSERVER_password')]"
+					},
+					"ADLS_SQL_ADLSSINK_properties_typeProperties_url": {
+						"value": "[parameters('ADLS_SQL_ADLSSINK_properties_typeProperties_url')]"
+					},
+					"DL_MultiCSV_properties_typeProperties_url": {
+						"value": "[parameters('DL_MultiCSV_properties_typeProperties_url')]"
+					},
+					"LS_MultiParque_properties_typeProperties_url": {
+						"value": "[parameters('LS_MultiParque_properties_typeProperties_url')]"
+					},
+					"LS_SINK_PARQUE_properties_typeProperties_url": {
+						"value": "[parameters('LS_SINK_PARQUE_properties_typeProperties_url')]"
+					},
+					"LS_SourceExcel_properties_typeProperties_url": {
+						"value": "[parameters('LS_SourceExcel_properties_typeProperties_url')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_server": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_server')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_database": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_database')]"
+					},
+					"LS_SQLSERVER_properties_typeProperties_userName": {
+						"value": "[parameters('LS_SQLSERVER_properties_typeProperties_userName')]"
+					}
+				}
+			},
+			"dependsOn": []
+		}
+	]
+}

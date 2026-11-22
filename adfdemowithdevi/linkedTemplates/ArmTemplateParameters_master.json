@@ -1,0 +1,57 @@
+{
+	"$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+	"contentVersion": "1.0.0.0",
+	"parameters": {
+		"factoryName": {
+			"value": "adfdemowithdevi"
+		},
+		"ADLS_SQL_ADLSSINK_accountKey": {
+			"value": ""
+		},
+		"DL_MultiCSV_accountKey": {
+			"value": ""
+		},
+		"LS_MultiParque_accountKey": {
+			"value": ""
+		},
+		"LS_SINK_PARQUE_accountKey": {
+			"value": ""
+		},
+		"LS_SQLSERVER_password": {
+			"value": ""
+		},
+		"LS_SourceExcel_accountKey": {
+			"value": ""
+		},
+		"ADLS_SQL_ADLSSINK_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"DL_MultiCSV_properties_typeProperties_url": {
+			"value": "https://adlsdevsource2.dfs.core.windows.net/"
+		},
+		"LS_MultiParque_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"LS_SINK_PARQUE_properties_typeProperties_url": {
+			"value": "https://adlsdevsinkdevi.dfs.core.windows.net/"
+		},
+		"LS_SQLSERVER_properties_typeProperties_server": {
+			"value": "localhost\\SQLEXPRESS"
+		},
+		"LS_SQLSERVER_properties_typeProperties_database": {
+			"value": "AdventureWorks2022"
+		},
+		"LS_SQLSERVER_properties_typeProperties_userName": {
+			"value": "visionboard_user"
+		},
+		"LS_SourceExcel_properties_typeProperties_url": {
+			"value": "https://adlsdevsource2.dfs.core.windows.net/"
+		},
+		"containerUri": {
+			"value": ""
+		},
+		"containerSasToken": {
+			"value": ""
+		}
+	}
+}
