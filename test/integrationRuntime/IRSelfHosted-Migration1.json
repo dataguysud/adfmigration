@@ -1,0 +1,6 @@
+{
+	"name": "IRSelfHosted-Migration1",
+	"properties": {
+		"type": "SelfHosted"
+	}
+}
